@@ -12,6 +12,10 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="homepage.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="javascript/homeApp.js"></script>
+    <script src="javascript/homeController.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,14 +24,14 @@
     <![endif]-->
 </head>
 
-<body>
+<body ng-app="homeApp">
     <div class="header">
         <div class="container">
             <img src="images/headerpicture.png" width="1000px">
 
         </div>
     </div>
-    <div class="mybody">
+    <div class="mybody" ng-controller="homeController">
         <div class="content">
             <div class="link col-md-4 col-sm-4">
                 <h1><a>About me</a></h1>
@@ -39,6 +43,15 @@
 
             <div class="link col-md-4 col-sm-4">
                 <h1><a>Projects</a></h1>
+            </div>
+        </div>
+        <h1>Here are my projects:</h1>
+
+        <div ng-repeat="x in githubObject">
+            <div style="margin-bottom:10px;">
+                <h2>{{x.name}}</h2>
+                <span> {{x.description}} </span>
+                <a href="{{x.html_url}}" target="_blank">{{x.html_url}}</a>
             </div>
         </div>
     </div>

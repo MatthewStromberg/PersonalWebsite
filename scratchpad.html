@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <p>Today's welcome message is:</p>
+
+        <h1>Here are my projects:</h1>
+
+        <div ng-repeat="x in myWelcome">
+            <div style="margin-bottom:10px;">
+                <h2>{{x.name}}</h2>
+                <span> {{x.description}} </span>
+                <a href="{{x.html_url}}" target="_blank">{{x.html_url}}</a>
+            </div>
+        </div>
+
+    </div>
+
+    <p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+            $http.get("https://api.github.com/users/MatthewStromberg/repos")
+                .then(function(response) {
+                    $scope.myWelcome = response.data;
+                });
+        });
+
+    </script>
+
+</body>
+
+</html>
