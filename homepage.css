@@ -1,6 +1,15 @@
 .header {
     text-align: center;
+    height: 500px;
+    background-image: url(images/headerpicture.png);
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: #407D9D;
+    background-size: 50% auto;
+}
+
+.container {
+    background-color: aqua;
 }
 
 .mybody {
@@ -34,4 +43,29 @@
 .link a {
     color: inherit;
     text-decoration: none;
+}
+
+.animate-enter,
+.animate-leave {
+    -webkit-transition: 600ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    -moz-transition: 600ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    -ms-transition: 600ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    -o-transition: 600ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+    transition: 600ms cubic-bezier(0.000, 0.000, 0.580, 1.000) all;
+}
+
+.animate-enter {
+    left: -100%;
+}
+
+.animate-enter.animate-enter-active {
+    left: 0;
+}
+
+.animate-leave {
+    left: 0;
+}
+
+.animate-leave.animate-leave-active {
+    left: 100%;
 }

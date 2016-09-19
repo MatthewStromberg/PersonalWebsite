@@ -27,12 +27,11 @@
 <body ng-app="homeApp">
     <div class="header">
         <div class="container">
-            <img src="images/headerpicture.png" width="1000px">
 
         </div>
     </div>
     <div class="mybody" ng-controller="homeController">
-        <div class="content">
+        <div id="nav" class="content">
             <div class="link col-md-4 col-sm-4">
                 <h1><a>About me</a></h1>
             </div>
@@ -54,11 +53,20 @@
                 <a href="{{x.html_url}}" target="_blank">{{x.html_url}}</a>
             </div>
         </div>
+        <h1 id="mything">Test</h1>
     </div>
     <!-- jQuery (necessary for Bootstrap 's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('html,body').animate({
+                scrollTop: $("#nav").offset().top
+            }, 4000);
+        });
+    </script>
 </body>
 
 </html>
