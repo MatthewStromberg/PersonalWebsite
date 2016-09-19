@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="mybody" ng-controller="homeController">
-        <div id="nav" class="content">
+        <div id="nav" class="content" onclick="myFunction(this)">
             <div class="link col-md-4 col-sm-4">
                 <h1><a>About me</a></h1>
             </div>
@@ -61,11 +61,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('html,body').animate({
-                scrollTop: $("#nav").offset().top
-            }, 4000);
-        });
+        function myThing(this) {
+            $(document).ready(function() {
+                $('html,body').animate({
+                    scrollTop: $(this).offset().top
+                }, 4000);
+            });
+        }
+
     </script>
 </body>
 
