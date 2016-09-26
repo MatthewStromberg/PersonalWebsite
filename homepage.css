@@ -29,7 +29,6 @@
     width: auto;
     margin: 5px;
     height: 750px;
-    border: 2px solid black;
 }
 
 .mynav {
@@ -48,7 +47,8 @@
 }
 
 .contentHolder {
-    border: 2px solid black;
+    min-height: 20em;
+    border: 1px solid black;
     text-align: center;
     height: auto;
 }
@@ -59,13 +59,23 @@
     display: inline-block;
 }
 
-.w3-animate-right {
+.my-animation.ng-enter {
     position: relative;
-    -webkit-animation: animateright 0.4s;
-    animation: animateright 0.4s
+    -webkit-animation: enter 0.4s;
+    animation: enter 0.4s;
 }
 
-@-webkit-keyframes animateright {
+.my-animation.ng-leave {
+    -webkit-animation: exit 0.4s;
+    animation: exit 0.4s;
+}
+
+.activeClass,
+.activeClass:hover {
+    background-color: green;
+}
+
+@-webkit-keyframes enter {
     from {
         right: -300px;
         opacity: 0
@@ -76,8 +86,63 @@
     }
 }
 
+@keyframes enter {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes exit {
+    from {
+        right: 0px;
+        opacity: 1
+    }
+    to {
+        right: -300px;
+        opacity: 0
+    }
+}
+
+@keyframes exit {
+    from {
+        right: 0;
+        opacity: 1
+    }
+    to {
+        right: -300px;
+        opacity: 0
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     .header {
         background-size: contain;
+    }
+    .mynav li {
+        margin: 0 2em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .mynav li {
+        font-size: 75%;
+        margin: 0 2.5%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .mynav {
+        text-align: center;
+    }
+    .mynav li {
+        margin: 2px;
+        text-align: center;
+        width: 50%;
+        display: inline-block;
     }
 }
