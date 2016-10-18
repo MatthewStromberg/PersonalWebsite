@@ -54,7 +54,6 @@
 }
 
 .link {
-    text-transform: uppercase;
     color: #407D9D;
     display: inline-block;
 }
@@ -75,13 +74,35 @@
     background-color: green;
 }
 
+#projectHolder {
+    display: inline-block;
+}
+
+.projectBox {
+    border: 2px solid black;
+    margin: 2em;
+    padding: 1em 1em 1em 1em;
+    display: inline-block;
+    color: red;
+    width: 200px;
+    overflow: scroll;
+    border-radius: 20px;
+}
+
+.projectBox h2 {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
 @-webkit-keyframes enter {
     from {
         right: -300px;
+        top: 0px;
         opacity: 0
     }
     to {
         right: 0;
+        top: 0px;
         opacity: 1
     }
 }
@@ -89,10 +110,12 @@
 @keyframes enter {
     from {
         right: -300px;
+        top: -500px;
         opacity: 0
     }
     to {
         right: 0;
+        top: 0px;
         opacity: 1
     }
 }
