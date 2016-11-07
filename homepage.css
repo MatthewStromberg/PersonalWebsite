@@ -8,7 +8,7 @@
 }
 
 .header {
-    height: 20em;
+    height: 18em;
 }
 
 .header img {
@@ -74,25 +74,32 @@
     background-color: green;
 }
 
-#projectsContainer {
-    background-color: skyblue;
+.projectsContainer {
     text-align: center;
 }
 
-.projectHolder {
-    display: inline-block;
+.projectsContainer h4 {
+    font-style: italic;
+}
+
+.clearfix {
+    background-color: blue;
+}
+
+.githubObjectClass {
     text-align: center;
 }
 
-.projectBox {
+.githubItem {
     text-align: center;
     border: 2px solid black;
-    margin: 2em;
+    margin: 1em;
     padding: 1em;
-    display: inline-block;
+    position: relative;
     float: left;
     color: red;
-    width: 250px;
+    /*    width: 250px;*/
+    width: 20%;
     height: 200px;
     word-wrap: normal;
     overflow-y: auto;
@@ -100,17 +107,18 @@
     border-radius: 20px;
 }
 
-.projectBox h2 {
+.githubItem h2 {
     font-size: 24px;
     text-decoration: underline;
+    color: blue;
 }
 
-.projectBox::-webkit-scrollbar-track {
+.githubItem::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
 }
 
-.projectBox::-webkit-scrollbar {
+.githubItem::-webkit-scrollbar {
     width: 3px;
     background-color: #F5F5F5;
 }
@@ -120,7 +128,7 @@
 http://jsfiddle.net/vivmaha/oq6prk1p/9/
 */
 
-.projectBox::-webkit-scrollbar-thumb {
+.githubItem::-webkit-scrollbar-thumb {
     border-radius: 50px;
     background-color: gray;
 }

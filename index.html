@@ -53,12 +53,17 @@
                 <div ng-switch-when="resume" class="my-animation">
                     <iframe src="http://docs.google.com/gview?url=http://matthewastromberg.com/assets/MatthewStrombergResume.pdf&embedded=true" style="width:100%; height:45em;" frameborder="0"></iframe>
                 </div>
-                <div id="projectsContainer" ng-switch-when="projects" class="my-animation">
+                <div class="projectsContainer" ng-switch-when="projects">
                     <h2>Projects</h2>
-                    <div class="projectHolder" ng-repeat="x in githubObject">
-                        <div class="projectBox">
-                            <h2><a href="{{x.html_url}}" target="_blank">{{x.name}}</a></h2>
-                            <span> {{x.description}} </span>
+                    <h4>This data is dynamically populated using the Github API</h4>
+                    <div>
+                        <div class="clearfix">
+                            <div class="githubObjectClass" ng-repeat="x in githubObject">
+                                <div class="githubItem">
+                                    <h2><a href="{{x.html_url}}" target="_blank">{{x.name}}</a></h2>
+                                    <span> {{x.description}} </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
