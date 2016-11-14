@@ -1,3 +1,9 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     text-align: center;
     background-image: url(images/headerpicture.png);
@@ -26,7 +32,7 @@
 }
 
 .myBody .container {
-    width: auto;
+    width: 100%;
     margin: 5px;
     height: 750px;
 }
@@ -83,7 +89,11 @@
 }
 
 .clearfix {
-    background-color: blue;
+    /*    margin-left: 50px;
+    margin-left: 5em;*/
+    margin-right: -5em;
+    display: table;
+    margin: 0 auto;
 }
 
 .githubObjectClass {
@@ -99,18 +109,22 @@
     float: left;
     color: red;
     /*    width: 250px;*/
+    min-width: 200px;
     width: 20%;
     height: 200px;
-    word-wrap: normal;
-    overflow-y: auto;
-    overflow-x: hidden;
+    text-overflow: ellipsis;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .githubItem h2 {
     font-size: 24px;
     text-decoration: underline;
     color: blue;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .githubItem::-webkit-scrollbar-track {
