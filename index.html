@@ -12,7 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="homepage.css" rel="stylesheet">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,7 +33,7 @@
             <ul class="mynav">
                 <li id="about" class="btn btn-info" ng-click="mySwitch='about';myFunc('about')">About me</li>
                 <li id="resume" class="btn btn-info" ng-click="mySwitch='resume';myFunc('resume')">Resume</li>
-                <li id="projects" class="btn btn-info" ng-click="mySwitch='projects';myFunc('projects')">Projects</li>
+                <li id="projects" class="btn btn-info" ng-click="mySwitch='projects';myFunc('projects')" onClick="myDot()">Projects</li>
                 <li id="contact" class="btn btn-info" ng-click="mySwitch='contact';myFunc('contact')">Contact</li>
             </ul>
 
@@ -44,9 +44,9 @@
 
                     <h1>My name is Matthew Stromberg. Welcome!</h1>
 
-                    <p>I graduated from Binghamton University in May of 2016, with a Bachelor's degree in Computer Science. While at Binghamton, I was a Resident Assistant, a Course Assistant, and I'd begun remotely working for <a class="link" href="https://www.codecademy.com">Codecademy</a> where I help users learn code &amp; coding principles, especially geared towards internet programming. </p>
-                    <p>I'm still an advisor at <a class="link" href="https://www.codecademy.com">Codecademy</a>, and also a Full-Time Technical Support Engineer at <a class="link" href="https://www.confirmit.com/">Confirmit</a>, in New York City.</p>
-                    <p> I've had practice with Web Development, Mobile Development, and General OOP, but I enjoy Web Development the most. Feel free to message me with any questinos you may have. You can find more placed to reach me in the "Contact" tab.
+                    <p>I graduated from Binghamton University in May of 2016, with a Bachelor's degree in Computer Science. While at Binghamton, I was a Resident Assistant, a Course Assistant, and I'd begun remotely working for <a class="link" href="https://www.codecademy.com">Codecademy</a> where I help users learn code &amp; coding principles, especially geared towards Web Development. </p>
+                    <p>I'm still an advisor at <a class="link" href="https://www.codecademy.com">Codecademy</a>, and also a Full-Time Technical Support Engineer at <a class="link" href="https://www.confirmit.com/">Confirmit inc.</a>, in New York City.</p>
+                    <p> I've had practice with Web Development, Mobile Development, and General OOP, but I enjoy Web Development the most. Feel free to message me with any questions you may have. You can find more placed to reach me in the "Contact" tab.
                     </p>
                 </div>
                 <div ng-switch-when="resume" class="my-animation">
@@ -56,12 +56,20 @@
                     <h2>Projects</h2>
                     <h4>This data is dynamically populated using the Github API</h4>
                     <div>
-                        <div class="clearfix">
-                            <div class="githubObjectClass" ng-repeat="x in githubObject">
-                                <div class="githubItem">
-                                    <h2><a href="{{x.html_url}}" target="_blank" >{{x.name}}</a></h2>
-                                    <span> {{x.description}} </span>
+                        <div class="githubObjectClass">
+                            <div ng-repeat="x in githubObject">
+                                <div class="col-xs-3">
+                                    <div class="githubItem">
+                                        <h2><a href="{{x.html_url}}" target="_blank" >{{x.name}}</a></h2>
+                                        <span> {{x.description}} </span>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="bitbucketObjectClass">
+                            <div ng-repeat="x in bitbucketObject.values">
+                                {{x.name}}
+
                             </div>
                         </div>
                     </div>
@@ -93,6 +101,18 @@
 -->
     <!-- jQuery (necessary for Bootstrap 's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- dotdotdot JQuery plugin for ellipses vertically -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.js"></script>
+    <script type="text/javascript">
+        function myDot() {
+            setTimeout(function() {
+                $(".githubItem").dotdotdot();
+            }, 3000);
+        }
+
+    </script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="http://code.angularjs.org/1.2.1/angular.js"></script>
