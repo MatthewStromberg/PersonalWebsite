@@ -89,7 +89,7 @@ body {
 }
 
 .githubObjectClass {
-    display: table;
+    /*    display: table; */
     margin: 0 auto;
     max-width: 1200px;
     text-align: center;
@@ -99,12 +99,11 @@ body {
     text-align: center;
     border: 2px solid black;
     padding: 2em;
-    margin: 1em 0em;
+    margin: 1em .5em;
     color: red;
     height: 175px;
     text-overflow: ellipsis;
     border-radius: 20px;
-    /*overflow: hidden;*/
 }
 
 .githubItem h2 {
@@ -180,7 +179,6 @@ http://jsfiddle.net/vivmaha/oq6prk1p/9/
 
 @media only screen and (max-width: 900px) {
     .mynav li {
-        font-size: 75%;
         margin: 0 2.5%;
     }
 }
@@ -192,7 +190,7 @@ http://jsfiddle.net/vivmaha/oq6prk1p/9/
     .mynav li {
         margin: 2px;
         text-align: center;
-        width: 50%;
+        width: 80%;
         display: inline-block;
     }
 }
