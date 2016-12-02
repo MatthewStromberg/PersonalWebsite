@@ -1,3 +1,9 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     text-align: center;
     background-image: url(images/headerpicture.png);
@@ -8,7 +14,7 @@
 }
 
 .header {
-    height: 20em;
+    height: 18em;
 }
 
 .header img {
@@ -26,12 +32,13 @@
 }
 
 .myBody .container {
-    width: auto;
+    width: 100%;
     margin: 5px;
     height: 750px;
 }
 
 .mynav {
+    padding: 0;
     margin-top: 15px;
     text-align: center;
 }
@@ -54,7 +61,6 @@
 }
 
 .link {
-    text-transform: uppercase;
     color: #407D9D;
     display: inline-block;
 }
@@ -75,9 +81,57 @@
     background-color: green;
 }
 
+.projectsContainer {
+    text-align: center;
+}
+
+.projectsContainer h4 {
+    font-style: italic;
+}
+
+.objectClass {
+    /*    display: table; 
+    */
+    margin: 0 auto;
+    margin-bottom: 10px;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.objectClass:hover {
+    background-color: #b5dcff;
+}
+
+.item {
+    text-align: center;
+    border: 2px solid black;
+    padding: 2em;
+    margin: 1em .5em;
+    color: red;
+    height: 175px;
+    text-overflow: ellipsis;
+    border-radius: 20px;
+}
+
+.item h2 {
+    font-size: 24px;
+    text-decoration: underline;
+    color: blue;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/*
+http://jsfiddle.net/vivmaha/oq6prk1p/9/
+*/
+
 @-webkit-keyframes enter {
     from {
         right: -300px;
+        top: -1px;
         opacity: 0
     }
     to {
@@ -89,10 +143,12 @@
 @keyframes enter {
     from {
         right: -300px;
+        top: -500px;
         opacity: 0
     }
     to {
         right: 0;
+        top: 0px;
         opacity: 1
     }
 }
@@ -130,19 +186,18 @@
 
 @media only screen and (max-width: 900px) {
     .mynav li {
-        font-size: 75%;
         margin: 0 2.5%;
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 675px) {
     .mynav {
         text-align: center;
     }
     .mynav li {
         margin: 2px;
         text-align: center;
-        width: 50%;
+        width: 80%;
         display: inline-block;
     }
 }

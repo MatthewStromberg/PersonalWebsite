@@ -1,0 +1,14 @@
+{
+    "elements": [
+        {
+            "title": "WordCloud",
+            "description": "Create a word cloud with any corpus of text.",
+            "url": "/WordCloud.html"
+    },
+        {
+            "title": "Letter Counter",
+            "description": "Count instances of unique characters in a string of text, especially helpful for Resident Assistants",
+            "url": "/letterCounter.html"
+    }
+  ]
+}
