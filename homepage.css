@@ -38,6 +38,7 @@ body {
 }
 
 .mynav {
+    padding: 0;
     margin-top: 15px;
     text-align: center;
 }
@@ -88,14 +89,20 @@ body {
     font-style: italic;
 }
 
-.githubObjectClass {
-    /*    display: table; */
+.objectClass {
+    /*    display: table; 
+    */
     margin: 0 auto;
+    margin-bottom: 10px;
     max-width: 1200px;
     text-align: center;
 }
 
-.githubItem {
+.objectClass:hover {
+    background-color: #b5dcff;
+}
+
+.item {
     text-align: center;
     border: 2px solid black;
     padding: 2em;
@@ -106,7 +113,7 @@ body {
     border-radius: 20px;
 }
 
-.githubItem h2 {
+.item h2 {
     font-size: 24px;
     text-decoration: underline;
     color: blue;
@@ -183,7 +190,7 @@ http://jsfiddle.net/vivmaha/oq6prk1p/9/
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 675px) {
     .mynav {
         text-align: center;
     }
